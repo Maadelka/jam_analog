@@ -1,0 +1,89 @@
+
+@import 'mdls';
+*{
+    @include reset();
+}
+body{
+    height: 100vh;
+    @include disp-flex(flex-start,center,column);
+}
+
+.container{
+    .cJarum{
+        @include w-h(400px,400px);
+        background-color: rgb(77, 77, 77);
+        border-radius: 50%;
+        box-shadow: 3px 3px 4px black;
+        @include disp-flex(center,center,column);
+        position: relative;
+        .jarum{
+            position: absolute;
+            right: 50%;
+            transform: rotate(90deg);
+            transform-origin: 100%;
+            transition: all 0.05s cubic-bezier(0.1, 2.7, 0.58, 1);
+        }
+        .jam{
+            width: 35%;
+            height: 8px;
+            background: #22753b;
+            box-shadow: 0 0 3px black;
+            @include disp-flex(center,center,column);
+            &::before{
+                content: '';
+                position: absolute;
+                width: 10px;
+                height: 15px;
+                background: #22753b;
+                left: -3px;
+                border-top-left-radius: 15px;
+                border-bottom-left-radius: 15px;
+                box-shadow: 0 0 3px black;
+            }
+        }
+        .menit{
+            width: 45%;
+            height: 5px;
+            background: #3b1f1f;
+            box-shadow: 0 0 3px black;
+            @include disp-flex(center,center,column);
+            &::before{
+                content: '';
+                position: absolute;
+                width: 8px;
+                height: 12px;
+                background: #3b1f1f;
+                left: -3px;
+                border-top-left-radius: 15px;
+                border-bottom-left-radius: 15px;
+                box-shadow: 0 0 3px black;
+            }
+        }
+        .detik{
+            width: 40%;
+            height: 3px;
+            background: #ffffff;
+            box-shadow: 0 0 3px black;
+            @include disp-flex(center,center,column);
+            &::before{
+                content: '';
+                position: absolute;
+                width: 5px;
+                height: 8px;
+                background: #ffffff;
+                left: -3px;
+                border-top-left-radius: 15px;
+                border-bottom-left-radius: 15px;
+                box-shadow: 0 0 3px black;
+            }
+        }
+        .titik{
+            width: 15px;
+            height: 15px;
+            background-color: rgb(29, 12, 90);
+            border-radius: 50%;
+            z-index: 99;
+            box-shadow: 2px 2px 3px black;
+        }
+    }
+}
