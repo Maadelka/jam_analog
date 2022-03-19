@@ -9,9 +9,11 @@ body{
 }
 
 .container{
+    @include disp-flex(center,center,column);
+    position: relative;
     .cJarum{
         @include w-h(400px,400px);
-        background-color: rgb(77, 77, 77);
+        background-color: rgb(93, 93, 94);
         border-radius: 50%;
         box-shadow: 3px 3px 4px black;
         @include disp-flex(center,center,column);
@@ -42,9 +44,9 @@ body{
             }
         }
         .menit{
-            width: 45%;
+            width: 39%;
             height: 5px;
-            background: #3b1f1f;
+            background: #1d1864;
             box-shadow: 0 0 3px black;
             @include disp-flex(center,center,column);
             &::before{
@@ -52,7 +54,7 @@ body{
                 position: absolute;
                 width: 8px;
                 height: 12px;
-                background: #3b1f1f;
+                background: #1d1864;
                 left: -3px;
                 border-top-left-radius: 15px;
                 border-bottom-left-radius: 15px;
@@ -61,15 +63,15 @@ body{
         }
         .detik{
             width: 40%;
-            height: 3px;
+            height: 2px;
             background: #ffffff;
             box-shadow: 0 0 3px black;
             @include disp-flex(center,center,column);
             &::before{
                 content: '';
                 position: absolute;
-                width: 5px;
-                height: 8px;
+                width: 3px;
+                height: 6px;
                 background: #ffffff;
                 left: -3px;
                 border-top-left-radius: 15px;
@@ -86,4 +88,115 @@ body{
             box-shadow: 2px 2px 3px black;
         }
     }
+
+    // ---------------------------------------- angka
+    .angka{
+        @include w-h(400px,400px);
+        border-radius: 50%;
+        @include disp-flex(center,center,column);
+        position: absolute;
+        .angka{
+            height: 100%;
+            width: 2px;
+            position: absolute;
+            color: #5569ff;
+            // padding: 5px;
+            &::before{
+                border-bottom-left-radius: 20px;
+                border-bottom-right-radius: 20px;
+                padding: 2px;
+                filter: drop-shadow(2px 2px 1px black);
+                position: absolute;
+                font-size: 2rem;
+            }
+            &::after{
+                border-bottom-left-radius: 20px;
+                border-bottom-right-radius: 20px;
+                padding: 2px;
+                filter: drop-shadow(2px 2px 1px black);
+                position: absolute;
+                font-size: 2rem;
+            }
+        }
+        .a1{
+            &::before{
+                content: '12';
+                top: 0;
+            }
+            &::after{
+                content: '6';
+                bottom: 0;
+            }
+        }
+        .a2{
+            transform: rotate(30deg);
+            &::before{
+                content: '1';
+                top: 0;
+                transform: rotate(-30deg);
+                color: var(--afterBack, #5569ff);
+            }
+            &::after{
+                content: '7';
+                bottom: 0;
+                transform: rotate(-30deg);
+            }
+        }
+        .a3{
+            transform: rotate(60deg);
+            &::before{
+                content: '2';
+                top: 0;
+                transform: rotate(-60deg);
+            }
+            &::after{
+                content: '8';
+                bottom: 0;
+                transform: rotate(-60deg);
+            }
+        }
+        .a4{
+            transform: rotate(90deg);
+            &::before{
+                content: '3';
+                top: 0;
+                transform: rotate(-90deg);
+            }
+            &::after{
+                content: '9';
+                bottom: 0;
+                transform: rotate(-90deg);
+            }
+        }
+        .a5{
+            transform: rotate(120deg);
+            &::before{
+                content: '4';
+                top: 0;
+                transform: rotate(-120deg);
+            }
+            &::after{
+                content: '10';
+                bottom: 0;
+                transform: rotate(-120deg);
+            }
+        }
+        .a6{
+            transform: rotate(150deg);
+            &::before{
+                content: '5';
+                top: 0;
+                transform: rotate(-150deg);
+            }
+            &::after{
+                content: '11';
+                bottom: 0;
+                transform: rotate(-150deg);
+            }
+        }
+    }
+}
+
+.test{
+    margin-top: 10px;
 }
